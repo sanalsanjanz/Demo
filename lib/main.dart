@@ -61,12 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
               values.isEmpty
                   ? const Center(child: Text('nothing found'))
                   : Expanded(
-                      child: ListView.builder(
-                        key: Key(values.length.toString()),
-                        itemCount: values.length,
-                        itemBuilder: (context, index) {
-                          return getRow(index: index);
-                        },
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          reverse: true,
+                          key: Key(values.length.toString()),
+                          itemCount: values.length,
+                          itemBuilder: (context, index) {
+                            return getRow(index: index);
+                          },
+                        ),
                       ),
                     ),
             ],
